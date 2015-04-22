@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no
+		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<title>Arduino LED On/Off BLE</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<style>
+		@import 'ui/css/evothings-app.css';
+	</style>
+
+	<script>
+	// Redirect console.log to Evothings Workbench.
+	if (window.hyper && window.hyper.log) { console.log = hyper.log }
+	window.onerror = function(msg, url, line)
+	{
+		console.log(msg + ": " + url + ":" + line);
+	};
+	</script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name = "format-detection" content = "telephone=no"/>
+        <!--
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+        -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+        <title>Light Control</title>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+    </head>
+    <body ontouchstart=""><!-- ontouchstart="" enables low-delay CSS transitions. -->
+
+	<header>
+		<button class="back" onclick="history.back()">
+			<img src="ui/images/arrow-left.svg" />
+		</button>
+
+		<img class="logotype" src="ui/images/logo.svg" alt="Evothings" />
+
+		<!--<button class="menu" onclick=""><img src="ui/images/menu.svg" /></button>-->
+	</header>
+	
+
+  	<div data-role="main" class="ui-content">
+  
+	<h1>Bluetooth LED Remote Control</h1>
+	<div id="connectionScreen">
+            <ul id="deviceList" class="topcoat-list">      
+            </ul>
+            <div style="margin: 10px">            
+                <button class="topcoat-button" id="refreshButton">Refresh</button>
+            </div>            
+        </div>
+        
+        <div id="colorScreen">
+            
+            <button class="green wide" onclick="app.ledOn()">Light ON</button>
+
+
+			<button class="red wide" onclick="app.ledOff()">Light OFF</button>
+
+            
+            <button class="yellow wide" id="disconnectButton" onclick="app.disconnect()">Disconnect</button>
+            
+        </div>
+        <div id="messageDiv" style="font-size:75%"></div>        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            app.ledOn = function(){
+            	bluetoothSerial.write("a");
+            }
+            app.ledOff = function(){
+            	bluetoothSerial.write("b");
+            }
+        </script>
+        </div>
+        
+
+    </body>
+</html>
