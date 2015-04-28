@@ -7,34 +7,16 @@
         "files": {
             "res/xml/config.xml": {
                 "parents": {
-                    "/widget": [
-                        {
-                            "xml": "<feature name=\"BluetoothSerial\"><param name=\"android-package\" value=\"com.megster.cordova.BluetoothSerial\" /></feature>",
-                            "count": 1
-                        }
-                    ]
+                    "/widget": []
                 }
             },
             "AndroidManifest.xml": {
                 "parents": {
-                    "/manifest": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
-                            "count": 1
-                        }
-                    ]
+                    "/manifest": []
                 }
             }
         }
     },
-    "installed_plugins": {
-        "com.megster.cordova.bluetoothserial": {
-            "PACKAGE_NAME": "pk.incubator.www"
-        }
-    },
+    "installed_plugins": {},
     "dependent_plugins": {}
 }
