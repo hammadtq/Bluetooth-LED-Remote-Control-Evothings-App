@@ -1,8 +1,0 @@
-{
-    "com.megster.cordova.bluetoothserial": {
-        "source": {
-            "type": "registry",
-            "id": "com.megster.cordova.bluetoothserial"
-        }
-    }
-}
